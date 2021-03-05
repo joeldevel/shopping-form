@@ -12,7 +12,7 @@ function handleSubmit(e) {
   // the addEventListener is on the form, no the input
   const name = e.currentTarget.item.value;
   if(!name) return;
-  
+
   const item = {
     name : name,
     id : Date.now(),
@@ -29,10 +29,10 @@ function handleSubmit(e) {
 function displayItems() {
   // create a string with items in array and put them inside the list
   const html = items.map(item =>
-    `<li>
+    `<li class="list-item">
       <input type="checkbox">
         <span> ${item.name}</span>
-        <button aria-label="remove ${item.name}">&times;</button>
+        <button aria-label="remove ${item.name}" class="btn-close"><span>&times;</span></button>
     </li>`
   ).join('');
   list.innerHTML = html;
